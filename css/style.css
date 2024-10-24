@@ -1,82 +1,25 @@
-/* style.css */
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    margin: 0;
-    padding: 0;
+.search-input {
+	padding-left: 2.5rem;
 }
 
-header {
-    background-color: #FF6F61;
-    color: white;
-    padding: 10px;
-    text-align: center;
+.icon-container {
+	position: absolute;
+	left: 0.75rem;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #9ca3af;
 }
 
-h1 {
-    font-size: 3rem;
-    margin: 0;
+.ride-card {
+	transition: transform 0.2s;
 }
 
-nav {
-    display: flex;
-    justify-content: space-around;
-    background-color: #333;
-    padding: 10px 0;
+.ride-card:hover {
+	transform: translateY(-2px);
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-}
-
-nav a:hover {
-    background-color: #FF6F61;
-    transition: 0.3s;
-}
-
-.container {
-    margin: 50px auto;
-    width: 80%;
-    max-width: 1200px;
-    text-align: center;
-}
-
-input, select {
-    padding: 10px;
-    margin: 10px;
-    width: 100%;
-    max-width: 400px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #FF6F61;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #E85A4F;
-}
-
-/* Map Container */
-#map {
-    width: 100%;
-    height: 500px;
-    margin-top: 20px;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
+@media (max-width: 768px) {
+	.search-container {
+		grid-template-columns: 1fr;
+	}
 }

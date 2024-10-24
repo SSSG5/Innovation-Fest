@@ -1,37 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carpool Service</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <header>
-        <h1>Carpool Together</h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Find a Ride</a>
-            <a href="#">Offer a Ride</a>
-            <a href="#">My Account</a>
-        </nav>
-    </header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CampusPool - Student Carpooling Service</title>
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+			rel="stylesheet"
+		/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+	</head>
+	<body class="bg-gray-50">
+		<!-- Header -->
+		<header class="bg-blue-600 text-white p-4">
+			<div class="max-w-6xl mx-auto flex justify-between items-center">
+				<div class="flex items-center space-x-2">
+					<i data-feather="car" class="h-6 w-6"></i>
+					<h1 class="text-2xl font-bold">CampusPool</h1>
+				</div>
+				<nav class="hidden md:flex space-x-6">
+					<button class="hover:text-blue-200">Find a Ride</button>
+					<button class="hover:text-blue-200">Offer a Ride</button>
+					<button class="hover:text-blue-200">My Rides</button>
+				</nav>
+			</div>
+		</header>
 
-    <div class="container">
-        <h2>Find Your Next Ride</h2>
-        <input type="text" id="origin" placeholder="Enter your origin" />
-        <input type="text" id="destination" placeholder="Enter your destination" />
-        <input type="datetime-local" id="schedule" placeholder="Enter your schedule" />
-        <button id="ride-submit">Find Ride</button>
+		<!-- Hero Section -->
+		<div class="bg-blue-600 text-white pb-20 pt-10">
+			<div class="max-w-6xl mx-auto px-4">
+				<h2 class="text-4xl font-bold mb-4">Find Your Perfect Ride</h2>
+				<p class="text-xl mb-8">
+					Safe, affordable rides for students and young professionals
+				</p>
 
-        <div id="map"></div>
-    </div>
+				<!-- Search Form -->
+				<div class="bg-white rounded-lg p-6 shadow-lg">
+					<form id="searchForm" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+						<div class="relative">
+							<div class="icon-container">
+								<i data-feather="map-pin"></i>
+							</div>
+							<input
+								type="text"
+								name="from"
+								placeholder="From"
+								class="search-input w-full p-2 border rounded-md"
+							/>
+						</div>
+						<div class="relative">
+							<div class="icon-container">
+								<i data-feather="map-pin"></i>
+							</div>
+							<input
+								type="text"
+								name="to"
+								placeholder="To"
+								class="search-input w-full p-2 border rounded-md"
+							/>
+						</div>
+						<div class="relative">
+							<div class="icon-container">
+								<i data-feather="calendar"></i>
+							</div>
+							<input
+								type="date"
+								name="date"
+								class="search-input w-full p-2 border rounded-md"
+							/>
+						</div>
+						<div class="relative">
+							<div class="icon-container">
+								<i data-feather="clock"></i>
+							</div>
+							<input
+								type="time"
+								name="time"
+								class="search-input w-full p-2 border rounded-md"
+							/>
+						</div>
+						<button
+							type="submit"
+							class="md:col-span-4 mt-4 bg-blue-600 text-white px-6 py-2 rounded-md flex items-center justify-center"
+						>
+							<i data-feather="search" class="mr-2"></i>
+							Search Rides
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
 
-    <footer>
-        <p>&copy; 2024 Carpool Together. All rights reserved.</p>
-    </footer>
+		<!-- Available Rides Section -->
+		<div class="max-w-6xl mx-auto px-4 py-12">
+			<h3 class="text-2xl font-bold mb-6">Available Rides</h3>
+			<div
+				id="ridesContainer"
+				class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+			>
+				<!-- Rides will be dynamically inserted here -->
+			</div>
+		</div>
 
-    <script src="js/script.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
-</body>
+		<script src="js/script.js"></script>
+	</body>
 </html>
